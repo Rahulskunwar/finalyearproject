@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsve Admin Panel</title>
+    <!-- MATERIAL ICONS CON-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!-- GOOGLE FONT (POPPLNS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+    <!-- STYLESHEET-->
+    <link rel="stylesheet" href="./CSS/add-product.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <img src="./Images/logo/Kunwar Fashion-Text.png" class="logo">
+            <div class="search-bar">
+                <span class="material-icons-sharp">search</span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <img src="./Images/profile-img.png">
+                    </div>
+                    <h5> Rahul Jung Kunwar</h5>
+                    <span class="material-icons-sharp">expand_more</span>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVIGATION END-->
+
+    <main>
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp">cancel</span>
+            </button>
+            <div class="sidebar">
+                <!-- <div class="sidebar"> -->
+                <a href="./dashboard.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h4>Dashboard</h4>
+                </a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-btn active">
+                        <span class="material-icons-sharp">inventory_2</span>
+                        <h4>Catalog</h4>
+                        <span class="material-icons-sharp arrow">chevron_right</span>
+                    </a>
+                    <ul class="dropdown-content">
+                        <li><a href="./category-list.html" class="submenu-list"><ion-icon name="radio-button-on-sharp"></ion-icon><h4>Categories</h4></a></li>
+                        <li><a href="./product-list.html" class="submenu-product"><ion-icon name="radio-button-on-sharp"></ion-icon><h4>Products</h4></a></li>
+                        <li><a href="./brand-list.html" class="submenu-add"><ion-icon name="radio-button-on-sharp"></ion-icon><h4>Brands</h4></a></li>
+                    </ul>
+                    <!-- </div> -->
+                </div>
+
+                <a href="./order-list.html">
+                    <span class="material-icons-sharp">shopping_cart_checkout</span>
+                    <h4>Orders</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">group</span>
+                    <h4>Customers</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">receipt_long</span>
+                    <h4>Transactions</h4>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">chat</span>
+                    <h4>Messages</h4>
+                </a>
+            </div>
+            <!-- SIDEBAR END-->
+
+            <div class="updates">
+                <a href="#">LOG OUT</a>
+            </div>
+            
+
+        </aside>
+
+
+
+
+
+        <section class="add-product-section">
+            <h2>Add Product</h2>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription" name="productDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price:</label>
+                    <input type="number" id="productPrice" name="productPrice" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="productCategory">Category:</label>
+                    <select id="productCategory" name="productCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="Cloth">Cloth</option>
+                        <option value="Shoes">Shoes</option>
+                        <option value="Watchs">Watch</option>
+                        <option value="Perfumes">Perfumes</option>
+                        <option value="Cosmetics">Cosmetics</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productBrand">Brand:</label>
+                    <select id="productBrand" name="productBrand" required>
+                        <option value="">Select Brand</option>
+                        <option value="Brand A">Brand A</option>
+                        <option value="Brand B">Brand B</option>
+                        <option value="Brand C">Brand C</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sizes:</label>
+                    <div class="size-options">
+                        <input type="checkbox" id="sizeSmall" name="productSizes" value="Small">
+                        <label for="sizeSmall">Small</label>
+
+                        <input type="checkbox" id="sizeMedium" name="productSizes" value="Medium">
+                        <label for="sizeMedium">Medium</label>
+
+                        <input type="checkbox" id="sizeLarge" name="productSizes" value="Large">
+                        <label for="sizeLarge">Large</label>
+
+                        <input type="checkbox" id="sizeXL" name="productSizes" value="XL">
+                        <label for="sizeXL">XL</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="productGender">Gender:</label>
+                    <ul class="gender-list">
+                        <li><input type="radio" id="maleGender" name="productGender" value="Male" required><label
+                                for="maleGender">Male</label></li>
+                        <li><input type="radio" id="femaleGender" name="productGender" value="Female" required><label
+                                for="femaleGender">Female</label></li>
+                        <li><input type="radio" id="unisexGender" name="productGender" value="Unisex" required><label
+                                for="unisexGender">Unisex</label></li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="productQuantity">Quantity:</label>
+                    <input type="number" id="productQuantity" name="productQuantity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="productSKU">SKU:</label>
+                    <input type="text" id="productSKU" name="productSKU" required>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+
+        </section>
+
+        <section class="add-product-section-right">
+
+            <div class="protag wrapper">
+                <div class="title">
+                    <img src="tag.svg" alt="icon">
+                    <h2>Tags</h2>
+                </div>
+                <div class="content">
+                    <p>Press enter or add a comma after each tag</p>
+                    <ul><input type="text" spellcheck="false" placeholder="Enter tag here"></ul>
+                </div>
+                <div class="details">
+                    <p><span>10</span> tags are remaining</p>
+                    <!-- Remove the button here -->
+                </div>
+            </div>
+            <div class="margine"></div>
+
+            <div class="addproimg">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <div class="field">
+                    <h3>PRODUCT MEDIA</h3>
+                    <div id="largePreview" class="large-preview"></div>
+                    <label for="files" class="upload-icon">
+                        <span class="material-icons-sharp">drive_folder_upload</span>
+                    </label>
+                    <h5>Upload Image</h5>
+                    <h6>All Images</h6>
+                    <input type="file" id="files" name="files[]" class="upload-img" multiple style="display: none;"
+                        accept="image/*" required />
+                </div>
+            </div>
+
+
+            
+            
+
+        </section>
+
+
+
+
+
+        <!-- RIGHT END-->
+    </main>
+    <!-- ASIDE END-->
+
+    <script src="./JS/add-product.js"></script>
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
