@@ -1,0 +1,183 @@
+input,
+textarea {
+    border: 1px solid #f0f0f0;
+}
+
+input,
+select {
+    font-size: inherit;
+    margin: 0;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #AAA;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=checkbox] {
+    width: auto;
+    border: none;
+    bottom: -1px;
+    cursor: pointer;
+    margin: 2px 8px 0 0;
+    position: relative;
+    transform: scale(1.2);
+}
+
+/* Tooltips helpers */
+.field .tooltip {
+    float: right;
+    top: -28px;
+    right: 468px;
+    position: relative;
+    z-index: 2;
+}
+
+.field .tooltip:hover {
+    z-index: 3;
+}
+
+.field .tooltip>span {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    color: #FFF;
+    cursor: help;
+    background-color: #8100BE;
+    position: relative;
+    border-radius: 10px;
+}
+
+.field .tooltip .content {
+    opacity: 0;
+    width: 250px;
+    background-color: #333;
+    color: #FFF;
+    font-size: 0.9em;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    padding: 8px;
+    border-radius: 6px;
+    pointer-events: none;
+    transition: 0.2s cubic-bezier(0.1, 0.1, 0.25, 2);
+    -webkit-transition: 0.3s cubic-bezier(0.1, 0.2, 0.5, 2.2);
+    -moz-transition: 0.3s cubic-bezier(0.1, 0.2, 0.5, 2.2);
+}
+
+.field .tooltip p {
+    padding: 0;
+}
+
+.field .tooltip.down .content {
+    left: auto;
+    right: 0;
+    top: 30px;
+}
+
+.field .tooltip:hover .content {
+    opacity: 1;
+    left: 36px;
+}
+
+.field .tooltip .content b {
+    height: 0;
+    width: 0;
+    border-color: #333 #333 transparent transparent;
+    border-style: solid;
+    border-width: 9px 7px;
+    position: absolute;
+    left: -14px;
+    top: 8px;
+}
+
+.field .tooltip.down .content b {
+    left: auto;
+    right: 6px;
+    top: -10px;
+    border-width: 5px;
+    border-color: transparent #333 #333 transparent;
+}
+
+/* alerts (when validation fails) */
+.field .alert {
+    float: right;
+    margin: -30px 0 0 20px;
+    padding: 3px 10px;
+    color: #FFF;
+    border-radius: 3px 4px 4px 3px;
+    background-color: #d12626;
+    max-width: 200px;
+    white-space: pre;
+    position: relative;
+    left: -15px;
+    opacity: 0;
+    z-index: 1;
+    transition: 0.15s ease-out;
+}
+
+.field .alert::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    border-color: transparent #d12626 transparent transparent;
+    border-style: solid;
+    border-width: 11px 7px;
+    position: absolute;
+    left: -13px;
+    top: 1px;
+}
+
+.field.bad .alert {
+    left: 0;
+    opacity: 1;
+    font-size: small;
+}
+
+
+@keyframes shake {
+    15% {
+        transform: translateX(-5px);
+    }
+
+    30% {
+        transform: translateX(5px);
+    }
+
+    45% {
+        transform: translateX(-3px);
+    }
+
+    60% {
+        transform: translateX(3px);
+    }
+
+    75% {
+        transform: translateX(2px);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+@-webkit-keyframes shake {
+    25% {
+        -webkit-transform: translateX(-6px);
+    }
+
+    75% {
+        -webkit-transform: translateX(6px);
+    }
+}

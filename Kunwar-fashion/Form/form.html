@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 
+    - primary meta tags
+-->
+    <title>Kunwar Fashion - LogIn SignUp</title>
+    <meta name="title" content="Kunwar Fashion - Fashion Of All Brands">
+    <meta name="description">
+
+    <!-- 
+    - favicon
+-->
+    <link rel="shortcut icon" href="../container/icnos/Only logo.png" type="image">
+
+    <!-- 
+    - google font link
+-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+
+    <!-- 
+    - custom css link
+-->
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+    <link rel="stylesheet" href="./assets/CSS/fv.css">
+
+</head>
+
+<body class="has-bg-image" style="background-image: url(./background.png);">
+
+    <!-- 
+    - #PRELOADER
+-->
+
+    <div class="preload" data-preaload>
+        <div class="circle"></div>
+        <p class="text-load">KUNWAR FASHION</p>
+    </div>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="OTP.html">
+                <h1>Create Account</h1>
+                <img src="../container/icnos/Only logo.png" width="100" height="100">
+                <div class="social-container">
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon></a>
+                </div>
+                <!-- <span>Please fill out all the boxes</span> -->
+                <!-- <div class="input_box">
+                        <input type="text" placeholder="Full Name" required>
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div> -->
+                <div class="input_box field">
+                    <label>
+                        <input data-validate-length-range="6" data-validate-words="2" name="name"
+                            placeholder="Enter full name" required="required" />
+                        <i class="uil uil-user username"></i>
+                    </label>
+                    <div class='tooltip help'>
+                        <span>?</span>
+                        <div class='content'>
+                            <b></b>
+                            <p>Field must include your name with surname</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="input_box">
+                        <input type="text" placeholder="Username" required>
+                        <i class="uil uil-user username"></i>
+                    </div> -->
+                <div class="input_box field">
+                    <label>
+                        <input data-validate-length-range="3" name="name" placeholder="Enter username"
+                            required="required" />
+                        <i class="uil uil-user username"></i>
+                    </label>
+                    <div class='tooltip help'>
+                        <span>?</span>
+                        <div class='content'>
+                            <b></b>
+                            <p>Name must include atleast 3 words</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="input_box">
+                        <input type="email" placeholder="E-mail address" required>
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div> -->
+                <div class="input_box field">
+                    <label>
+                        <input name="email" placeholder="Enter Email" class='email' required="required" type="email" />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </label>
+                    <div class='tooltip help'>
+                        <span>?</span>
+                        <div class='content'>
+                            <b></b>
+                            <p>The email should consist of " @ " and " . " in a valid way.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="input_box">
+                        <input type="text" placeholder="Phone Number" required>
+                        <i class="uil uil-phone-alt number"></i>
+                    </div> -->
+                <div class="input_box field">
+                    <label>
+                        <input type="tel" class='tel' placeholder="Enter contact number" name="phone"
+                            required='required' data-validate-length-range="8,20">
+                        <i class="uil uil-phone-alt number"></i>
+                    </label>
+                    <div class='tooltip help'>
+                        <span>?</span>
+                        <div class='content'>
+                            <b></b>
+                            <p>Notice that the number should consist of 10 nubmbers</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="input_box">
+                        <input type="password" placeholder="Create password" required>
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div> -->
+                <div class="input_box field">
+                    <label>
+                        <input type="password" placeholder="Enter Password" name="password" data-validate-length="6,8"
+                            required='required'>
+                        <!-- <i class="uil uil-lock password"></i> -->
+                        <i class="uil uil-eye-slash pw_hide password"></i>
+                    </label>
+                    <div class='tooltip help'>
+                        <span>?</span>
+                        <div class='content'>
+                            <b></b>
+                            <p>Should be of length 6 or 8 characters</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="input_box">
+                        <input type="password" placeholder="Confirm password" required>
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div> -->
+                <div class="input_box field">
+                    <label>
+                        <input type="password" placeholder="Confirm Password" name="password2"
+                            data-validate-linked='password' required='required'>
+                        <!-- <i class="uil uil-lock password"></i> -->
+                        <i class="uil uil-eye-slash pw_hide password"></i>
+                    </label>
+                    <div class='tooltip help'>
+                        <span>?</span>
+                        <div class='content'>
+                            <b></b>
+                            <p>Should matched with earlier inputed password</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="margin"> </div>
+                <button type="submit" class="btn btn-secondary">
+                    <span class="text text-1">Sign Up</span>
+
+                    <span class="text text-2" aria-hidden="true">Sign Up</span>
+                </button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign In</h1>
+                <div class="mini-margin"> </div>
+                <img src="../container/icnos/Only logo.png" width="100" height="100">
+                <div class="mini-margin"> </div>
+                <div class="social-container">
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon></a>
+                </div>
+                <span>Enter your email and password here</span>
+                <div class="mini-margin"> </div>
+                <div class="input_box">
+                    <input name="email" placeholder="Enter E-mail Address" class='email' required="required"
+                        type="email" />
+                    <i class="uil uil-envelope-alt email"></i>
+                </div>
+                <div class="input_box">
+                    <input type="password" placeholder="Password" required="required">
+                    <i class="uil uil-lock password"></i>
+                    <i class="uil uil-eye-slash pw_hide"></i>
+                </div>
+                <a href="#">Forgot your password ?</a>
+                <div class="margin"> </div>
+                <button type="submit" class="btn btn-secondary">
+                    <span class="text text-1">Sign In</span>
+
+                    <span class="text text-2" aria-hidden="true">Sign In</span>
+                </button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <!-- <button class="ghost" id="signIn">Sign In</button> -->
+                    <button type="submit" class="btn btn-secondary ghost" id="signIn">
+                        <span class="text text-1">Sign In</span>
+
+                        <span class="text text-2" aria-hidden="true">Sign In</span>
+                    </button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friends!</h1>
+                    <p>Enter your personal details and start the journey with us</p>
+
+                    <!-- <button class="ghost" id="signUp">Sign Up</button> -->
+                    <button type="submit" class="btn btn-secondary ghost" id="signUp">
+                        <span class="text text-1">Sign Up</span>
+
+                        <span class="text text-2" aria-hidden="true">Sign Up</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="close">
+            <a href="../index.html">
+                <ion-icon name="close-circle-outline" size="large"></ion-icon>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="./assets/Scripts/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- <script src="multifield.js"></script> -->
+<script src="./assets/Scripts/validator.js"></script>
+<script>
+    // initialize a validator instance from the "FormValidator" constructor.
+    // A "<form>" element is optionally passed as an argument, but is not a must
+    var validator = new FormValidator({ "events": ['blur', 'paste', 'change'] }, document.forms[0]);
+
+    validator.texts.mySpecialInput = "wrong input" // custom error message for pattern mismatch
+
+    // on form "submit" event
+    document.forms[0].onsubmit = function (e) {
+        var submit = true,
+            validatorResult = validator.checkAll(this);
+
+        console.log(validatorResult);
+        return !!validatorResult.valid;
+    }
+
+    // on form "reset" event
+    document.forms[0].onreset = function (e) {
+        validator.reset();
+    }
+
+    // stuff related ONLY for this demo page:
+    $('.toggleValidationTooltips').change(function () {
+        validator.settings.alerts = !this.checked;
+
+        if (this.checked)
+            $('form .alert').remove();
+    }).prop('checked', false);
+</script>
