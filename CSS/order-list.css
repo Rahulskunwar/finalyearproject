@@ -209,7 +209,7 @@ small{
 
 .board {
     width: 130%;
-    margin: 30px 0 30px 30px;
+    margin: 60px 0 30px 30px;
     overflow: auto;
     background: var(--color-white);
     border-radius: 8px;
@@ -408,8 +408,8 @@ nav img.logo{
     width: 20rem;
 }
 
-nav .search-bar{
-    background: var(--color-light);
+.search-bar{
+    background: var(--color-white);
     padding: var(--padding-2) var(--card-padding);
     width: 32vw;
     border-radius: var(--border-radius-2);
@@ -418,16 +418,16 @@ nav .search-bar{
     gap: 1rem;
     color: var(--color-gray-light);
     position: absolute;
-    left: 15%;
+    margin: 7px 0 30px 30px;
 }
 
-nav .search-bar input[type='search']{
+.search-bar input[type='search']{
     color: var(--color-dark);
     background: transparent;
     width: 100%;
 }
 
-nav .search-bar input[type='search']::placeholder{
+.search-bar input[type='search']::placeholder{
     color: var(--color-gray-dark);
 }
 

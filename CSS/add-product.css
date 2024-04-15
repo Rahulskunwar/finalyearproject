@@ -388,7 +388,7 @@ button[type="submit"]:hover {
 
 
 /* =================== GENDER================= */
-
+/* 
 .gender-list {
     list-style: none;
     padding: 0;
@@ -440,23 +440,23 @@ button[type="submit"]:hover {
   .gender-list input[type="radio"]:checked + label::after {
     opacity: 1;
   }
-  
+   */
   
   
 
 /*  =================== SIZE  ===================*/
 
 
-.size-options {
+.gender-options {
     display: flex;
     flex-wrap: wrap;
   }
   
-  .size-options input[type="checkbox"] {
+  .gender-options input[type="checkbox"] {
     display: none;
   }
   
-  .size-options label {
+  .gender-options label {
     display: inline-block;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -467,7 +467,7 @@ button[type="submit"]:hover {
     border-radius: 5px;
   }
   
-  .size-options label.checked {
+  .gender-options label.checked {
     background-color: #007bff;
     color: #fff;
   }
@@ -1096,4 +1096,144 @@ main .recent-transactions .transaction .service .details h4{
     }
 
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================  Dynamic Option  ========================================================*/
+
+
+/* .container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+*/
+
+.card-header {
+    color: var(--color-gray-dark);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    background-color: var(--color-white);
+    padding: 0 0 20px 0;
+    border-radius: 4px;
+    /* border-bottom-left-radius: 5px; */
+    /* border-bottom-right-radius: 5px; */
+}
+
+.row {
+    margin-bottom: 15px;
+}
+.col-md-7 {
+    display: inline-block;
+    width: 200px;
+
+}
+.col-md-4 {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.col-md-1 {
+    display: inline-block;
+    /* vertical-align: top; */
+    
+}
+
+
+label {
+    font-size: 13px;
+    color: var(--color-gray-dark);
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 16px);
+    padding: 8px;
+    border: 3px solid var(--color-light);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.delete-button,
+.btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-button:hover,
+.btn:hover {
+    background-color: #c82333;
+} 
+
+.custom-option-input {
+    margin-top: 5px;
+    width: calc(100% - 16px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: none;
+} 
+
+.tag {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 30px 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.tag .remove-icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    font-size: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.options-dropdown,
+.custom-option-input,
+.highlightable {
+    background: var(--color-white);
+    color: var(--color-gray-dark);
+    /* border-color: 2px solid var(--color-gray-light); */
 }

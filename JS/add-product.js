@@ -101,7 +101,7 @@ $(document).ready(function() {
 
 
 // Get all checkboxes for sizes
-const sizeCheckboxes = document.querySelectorAll('.size-options input[type="checkbox"]');
+const sizeCheckboxes = document.querySelectorAll('.gender-options input[type="checkbox"]');
 
 // Add event listener to each checkbox
 sizeCheckboxes.forEach(checkbox => {
@@ -116,6 +116,54 @@ sizeCheckboxes.forEach(checkbox => {
 });
 
 
+// document.addEventListener('DOMContentLoaded', function () {
+//     const addOptionBtn = document.getElementById('addOptionBtn');
+//     const optionsContainer = document.getElementById('optionsContainer');
+
+//     addOptionBtn.addEventListener('click', function () {
+//         const optionContainer = document.createElement('div');
+//         optionContainer.classList.add('option-container');
+
+//         const optionInput = document.createElement('input');
+//         optionInput.type = 'text';
+//         optionInput.placeholder = 'Option';
+//         optionInput.name = 'option[]';
+
+//         const valueInput = document.createElement('input');
+//         valueInput.type = 'text';
+//         valueInput.placeholder = 'Value';
+//         valueInput.name = 'value[]';
+
+//         const deleteBtn = document.createElement('button');
+//         deleteBtn.type = 'button';
+//         deleteBtn.textContent = 'Delete';
+//         deleteBtn.classList.add('delete-option-btn');
+//         deleteBtn.addEventListener('click', function () {
+//             optionContainer.remove();
+//         });
+
+//         valueInput.addEventListener('keydown', function (event) {
+//             if (event.key === ' ' && valueInput.value.trim() !== '') {
+//                 createTag(valueInput.value.trim());
+//                 valueInput.value = '';
+//                 event.preventDefault(); // Prevent default space behavior
+//             }
+//         });
+
+//         function createTag(value) {
+//             const tag = document.createElement('span');
+//             tag.classList.add('tag');
+//             tag.textContent = value;
+//             optionContainer.insertBefore(tag, valueInput);
+//         }
+
+//         optionContainer.appendChild(optionInput);
+//         optionContainer.appendChild(valueInput);
+//         optionContainer.appendChild(deleteBtn);
+
+//         optionsContainer.appendChild(optionContainer);
+//     });
+// });
 
 
 
@@ -167,3 +215,71 @@ function addTag(e){
 }
 
 input.addEventListener("keyup", addTag);
+
+
+// ===========================================================================================
+
+var counter = 1;
+
+function add_more() {
+    counter++;
+    var newDiv = `<div id="product_row${counter}" class="row">
+                    <div class="col-md-7">
+                        <label for="options${counter}">Option</label>
+                        <select id="options${counter}" class="options-dropdown" onchange="toggleCustomInput(${counter})">
+                            <option value="" disabled selected hidden>Options</option>
+                            <option value="shoes">Shoes</option>
+                            <option value="bag">Bags</option>
+                            <option value="watch">Watch</option>
+                            <option value="custom">New</option>
+                        </select>
+                        <input id="customOption${counter}" type="text" placeholder="Enter new option" class="custom-option-input">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="values${counter}">Values</label>
+                        <input id="values${counter}" type="text" onkeypress="addValue(event, this)" class="highlightable" placeholder="Enter Values">
+                        <div id="tagContainer${counter}"></div>
+                    </div>
+                    <div class="col-md-1">
+                        <button onclick="delete_row('${counter}')" type="button" class="delete-button">Delete</button>
+                    </div>
+                </div>`;
+    var form = document.getElementById('input-form');
+    form.insertAdjacentHTML('beforeend', newDiv);
+}
+
+function delete_row(id) {
+    document.getElementById('product_row' + id).remove();
+}
+
+function toggleCustomInput(counter) {
+    var selectedOption = document.getElementById(`options${counter}`).value;
+    var customOptionInput = document.getElementById(`customOption${counter}`);
+    if (selectedOption === 'custom') {
+        customOptionInput.style.display = 'inline-block';
+    } else {
+        customOptionInput.style.display = 'none';
+    }
+}
+
+function addValue(event, input) {
+if (event.key === ' ' && input.value.trim() !== '') {
+var tagContainer = input.nextElementSibling;
+var tag = document.createElement('span');
+tag.className = 'tag';
+tag.textContent = input.value.trim();
+
+// Add remove icon
+var removeIcon = document.createElement('i');
+removeIcon.className = 'material-icons remove-icon';
+removeIcon.textContent = 'clear';
+removeIcon.onclick = function() {
+    tag.remove();
+};
+tag.appendChild(removeIcon);
+
+tagContainer.appendChild(tag);
+input.value = '';
+event.preventDefault(); // Prevent default space behavior
+}
+}

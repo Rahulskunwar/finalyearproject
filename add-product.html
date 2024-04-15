@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
     <!-- STYLESHEET-->
     <link rel="stylesheet" href="./CSS/add-product.css">
@@ -20,10 +21,6 @@
     <nav>
         <div class="container">
             <img src="./Images/logo/Kunwar Fashion-Text.png" class="logo">
-            <div class="search-bar">
-                <span class="material-icons-sharp">search</span>
-                <input type="search" placeholder="Search">
-            </div>
             <div class="profile-area">
                 <div class="theme-btn">
                     <span class="material-icons-sharp active">light_mode</span>
@@ -43,6 +40,11 @@
         </div>
     </nav>
     <!-- NAVIGATION END-->
+
+    <section class="add-product-section-top">
+        <form action="" id="addProductForm">
+        </form>
+    </section>
 
     <main>
         <aside>
@@ -100,20 +102,8 @@
 
 
         <section class="add-product-section">
-            <h2>Add Product</h2>
             <form id="addProductForm">
-                <div class="form-group">
-                    <label for="productName">Product Name:</label>
-                    <input type="text" id="productName" name="productName" required>
-                </div>
-                <div class="form-group">
-                    <label for="productDescription">Description:</label>
-                    <textarea id="productDescription" name="productDescription" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="productPrice">Price:</label>
-                    <input type="number" id="productPrice" name="productPrice" min="0" required>
-                </div>
+                <h2>Add Product</h2>
                 <div class="form-group">
                     <label for="productCategory">Category:</label>
                     <select id="productCategory" name="productCategory" required>
@@ -127,6 +117,18 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription" name="productDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Price:</label>
+                    <input type="number" id="productPrice" name="productPrice" min="0" required>
+                </div>
+                <div class="form-group">
                     <label for="productBrand">Brand:</label>
                     <select id="productBrand" name="productBrand" required>
                         <option value="">Select Brand</option>
@@ -137,23 +139,20 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Sizes:</label>
-                    <div class="size-options">
-                        <input type="checkbox" id="sizeSmall" name="productSizes" value="Small">
-                        <label for="sizeSmall">Small</label>
+                    <label>Gender:</label>
+                    <div class="gender-options">
+                        <input type="checkbox" id="onlymale" name="productSizes" value="Male">
+                        <label for="onlymale">Male</label>
 
-                        <input type="checkbox" id="sizeMedium" name="productSizes" value="Medium">
-                        <label for="sizeMedium">Medium</label>
+                        <input type="checkbox" id="onlyfemale" name="productSizes" value="Female">
+                        <label for="onlyfemale">Female</label>
 
-                        <input type="checkbox" id="sizeLarge" name="productSizes" value="Large">
-                        <label for="sizeLarge">Large</label>
-
-                        <input type="checkbox" id="sizeXL" name="productSizes" value="XL">
-                        <label for="sizeXL">XL</label>
+                        <input type="checkbox" id="all" name="productSizes" value="Unisex">
+                        <label for="all">Unisex</label>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="productGender">Gender:</label>
                     <ul class="gender-list">
                         <li><input type="radio" id="maleGender" name="productGender" value="Male" required><label
@@ -163,7 +162,7 @@
                         <li><input type="radio" id="unisexGender" name="productGender" value="Unisex" required><label
                                 for="unisexGender">Unisex</label></li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="form-group">
                     <label for="productQuantity">Quantity:</label>
                     <input type="number" id="productQuantity" name="productQuantity" min="1" required>
@@ -172,6 +171,61 @@
                     <label for="productSKU">SKU:</label>
                     <input type="text" id="productSKU" name="productSKU" required>
                 </div>
+                <!-- <div id="optionsContainer">
+                    <div class="option-container">
+                        <input type="text" placeholder="Option" name="option[]">
+                        <input type="text" placeholder="Value" name="value[]">
+                        <button type="button" class="delete-option-btn">Delete</button>
+                    </div>
+                </div>
+                <button type="button" id="addOptionBtn">Add Another Option</button> -->
+                
+
+
+<!-- ========================================================================================================== -->
+
+
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-header">Variants:</div>
+        <div class="card-body" id="input-form">
+            <div id="product_row1" class="row">
+                <div class="col-md-7">
+                    <label for="options1">Option</label>
+                    <select id="options1" class="options-dropdown" onchange="toggleCustomInput(1)">
+                        <option value="" disabled selected hidden>Options</option>
+                        <option value="shoes">Size</option>
+                        <option value="bag">Color</option>
+                        <option value="watch">Watch</option>
+                        <option value="custom">New</option>
+                    </select>
+                    <input id="customOption1" type="text" placeholder="Enter new option" class="custom-option-input">
+                </div>
+                <div class="col-md-4">
+                    <label for="values1">Values</label>
+                    <input id="values1" type="text" onkeypress="addValue(event, this)" class="highlightable" placeholder="Enter Values">
+                    <div id="tagContainer1"></div>
+                </div>
+                <div class="col-md-1">
+                    <button onclick="delete_row('1')" type="button" class="delete-button">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-end">
+            <button onclick="add_more()" class="btn">Add another option</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- ========================================================================================================== -->
+
                 <button type="submit">Add Product</button>
             </form>
 
