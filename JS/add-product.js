@@ -100,11 +100,73 @@ $(document).ready(function() {
 });
 
 
-// Get all checkboxes for sizes
-const sizeCheckboxes = document.querySelectorAll('.gender-options input[type="checkbox"]');
+$(document).ready(function() {
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+        $("#customFile").on("change", function(e) {
+            var file = e.target.files[0]; // Get the first selected file
+            
+            if (file) {
+                var fileReader = new FileReader();
+                fileReader.onload = function(e) {
+                    var imageSrc = e.target.result;
+                    $('#customLargePreview').html('<img class="largeImage" src="' + imageSrc + '">');
+                };
+                fileReader.readAsDataURL(file);
+            }
+        });
+    } else {
+        alert("Your browser doesn't support the File API");
+    }
+});
 
-// Add event listener to each checkbox
+// Get all checkboxes for sizes
+const genderCheckboxes = document.querySelectorAll('.gender-options input[type="checkbox"]');
+const sizeCheckboxes = document.querySelectorAll('.size-options input[type="checkbox"]');
+const shoesizeCheckboxes = document.querySelectorAll('.shoesize-options input[type="checkbox"]');
+const cussizeCheckboxes = document.querySelectorAll('.cusize-options input[type="checkbox"]');
+const colorCheckboxes = document.querySelectorAll('.color-options input[type="checkbox"]');
+
 sizeCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.classList.add('checked');
+        } else {
+            this.nextElementSibling.classList.remove('checked');
+        }
+    });
+});
+
+cussizeCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.classList.add('checked');
+        } else {
+            this.nextElementSibling.classList.remove('checked');
+        }
+    });
+});
+
+colorCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.classList.add('checked');
+        } else {
+            this.nextElementSibling.classList.remove('checked');
+        }
+    });
+});
+
+shoesizeCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        if (this.checked) {
+            this.nextElementSibling.classList.add('checked');
+        } else {
+            this.nextElementSibling.classList.remove('checked');
+        }
+    });
+});
+
+genderCheckboxes.forEach(checkbox => {
     checkbox.addEventListener('change', function() {
         // Toggle class to change background color when checkbox is checked
         if (this.checked) {
@@ -219,67 +281,107 @@ input.addEventListener("keyup", addTag);
 
 // ===========================================================================================
 
-var counter = 1;
+// var counter = 1;
 
-function add_more() {
-    counter++;
-    var newDiv = `<div id="product_row${counter}" class="row">
-                    <div class="col-md-7">
-                        <label for="options${counter}">Option</label>
-                        <select id="options${counter}" class="options-dropdown" onchange="toggleCustomInput(${counter})">
-                            <option value="" disabled selected hidden>Options</option>
-                            <option value="shoes">Shoes</option>
-                            <option value="bag">Bags</option>
-                            <option value="watch">Watch</option>
-                            <option value="custom">New</option>
-                        </select>
-                        <input id="customOption${counter}" type="text" placeholder="Enter new option" class="custom-option-input">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="values${counter}">Values</label>
-                        <input id="values${counter}" type="text" onkeypress="addValue(event, this)" class="highlightable" placeholder="Enter Values">
-                        <div id="tagContainer${counter}"></div>
-                    </div>
-                    <div class="col-md-1">
-                        <button onclick="delete_row('${counter}')" type="button" class="delete-button">Delete</button>
-                    </div>
-                </div>`;
-    var form = document.getElementById('input-form');
-    form.insertAdjacentHTML('beforeend', newDiv);
-}
+// function add_more() {
+//     counter++;
+//     var newDiv = `<div id="product_row${counter}" class="row">
+//                     <div class="col-md-7">
+//                         <label for="options${counter}">Option</label>
+//                         <select id="options${counter}" class="options-dropdown" onchange="toggleCustomInput(${counter})">
+//                             <option value="" disabled selected hidden>Options</option>
+//                             <option value="shoes">Shoes</option>
+//                             <option value="bag">Bags</option>
+//                             <option value="watch">Watch</option>
+//                             <option value="custom">New</option>
+//                         </select>
+//                         <input id="customOption${counter}" type="text" placeholder="Enter new option" class="custom-option-input">
+//                     </div>
+//                     <div class="col-md-4">
+//                         <label for="values${counter}">Values</label>
+//                         <input id="values${counter}" type="text" onkeypress="addValue(event, this)" class="highlightable" placeholder="Enter Values">
+//                         <div id="tagContainer${counter}"></div>
+//                     </div>
+//                     <div class="col-md-1">
+//                         <button onclick="delete_row('${counter}')" type="button" class="delete-button">Delete</button>
+//                     </div>
+//                 </div>`;
+//     var form = document.getElementById('input-form');
+//     form.insertAdjacentHTML('beforeend', newDiv);
+// }
 
-function delete_row(id) {
-    document.getElementById('product_row' + id).remove();
-}
+// function delete_row(id) {
+//     document.getElementById('product_row' + id).remove();
+// }
 
-function toggleCustomInput(counter) {
-    var selectedOption = document.getElementById(`options${counter}`).value;
-    var customOptionInput = document.getElementById(`customOption${counter}`);
-    if (selectedOption === 'custom') {
-        customOptionInput.style.display = 'inline-block';
-    } else {
-        customOptionInput.style.display = 'none';
-    }
-}
+// function toggleCustomInput(counter) {
+//     var selectedOption = document.getElementById(`options${counter}`).value;
+//     var customOptionInput = document.getElementById(`customOption${counter}`);
+//     if (selectedOption === 'custom') {
+//         customOptionInput.style.display = 'inline-block';
+//     } else {
+//         customOptionInput.style.display = 'none';
+//     }
+// }
 
-function addValue(event, input) {
-if (event.key === ' ' && input.value.trim() !== '') {
-var tagContainer = input.nextElementSibling;
-var tag = document.createElement('span');
-tag.className = 'tag';
-tag.textContent = input.value.trim();
+// function addValue(event, input) {
+// if (event.key === ' ' && input.value.trim() !== '') {
+// var tagContainer = input.nextElementSibling;
+// var tag = document.createElement('span');
+// tag.className = 'tag';
+// tag.textContent = input.value.trim();
 
-// Add remove icon
-var removeIcon = document.createElement('i');
-removeIcon.className = 'material-icons remove-icon';
-removeIcon.textContent = 'clear';
-removeIcon.onclick = function() {
-    tag.remove();
-};
-tag.appendChild(removeIcon);
+// // Add remove icon
+// var removeIcon = document.createElement('i');
+// removeIcon.className = 'material-icons remove-icon';
+// removeIcon.textContent = 'clear';
+// removeIcon.onclick = function() {
+//     tag.remove();
+// };
+// tag.appendChild(removeIcon);
 
-tagContainer.appendChild(tag);
-input.value = '';
-event.preventDefault(); // Prevent default space behavior
-}
-}
+// tagContainer.appendChild(tag);
+// input.value = '';
+// event.preventDefault(); // Prevent default space behavior
+// }
+// }
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var productCategory = document.getElementById("productCategory");
+    var cusizeOptions = document.querySelector(".cusize-options");
+    var sizeOptions = document.querySelector(".size-options");
+    var shoesizeOptions = document.querySelector(".shoesize-options");
+    var colorOptions = document.querySelector(".color-options");
+    var element = document.getElementById("size-label");
+    var colorlabel = document.getElementById("color-label");
+
+
+
+    productCategory.addEventListener("change", function() {
+        var selectedCategory = productCategory.value;
+
+        // Hide all size and color options first
+        cusizeOptions.style.display = "none";
+        sizeOptions.style.display = "none";
+        shoesizeOptions.style.display = "none";
+        colorOptions.style.display = "none";
+
+        // Show the relevant options based on the selected category
+        if (selectedCategory === "Cloth") {
+            sizeOptions.style.display = "block";
+            colorOptions.style.display = "block";
+        } else if (selectedCategory === "Shoes") {
+            shoesizeOptions.style.display = "block";
+            colorOptions.style.display = "block";
+        } else if (selectedCategory === "Watchs") {
+            colorOptions.style.display = "block";
+            element.innerHTML = ""; // Change the content inside the element
+        } else if (selectedCategory === "Perfumes" || selectedCategory === "Cosmetics") {
+            cusizeOptions.style.display = "block";
+            colorlabel.innerHTML = ""; // Change the content inside the element
+            // Hide size and color options for perfumes and cosmetics
+        }
+    });
+});

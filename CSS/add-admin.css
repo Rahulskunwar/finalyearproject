@@ -347,7 +347,10 @@ main aside{
 
 .form-group select,
 .form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
 .form-group input[type="text"],
+.form-group input[type="password"],
 .form-group textarea,
 .form-group input[type="file"] {
     width: 100%;
@@ -393,6 +396,15 @@ button[type="submit"]:hover {
 }
 
 
+
+.secproimg h5 {
+    justify-content: center;
+    text-align: center;
+}
+
+.secproimg .margin-bottom {
+    border-bottom: 3px solid var(--color-light);
+} 
 
 /* =================== GENDER================= */
 /* 

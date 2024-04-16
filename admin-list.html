@@ -12,12 +12,13 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- STYLESHEET-->
-    <link rel="stylesheet" href="./CSS/order-list.css">
+    <link rel="stylesheet" href="./CSS/admin-list.css">
 </head>
 <body>
     <nav>
         <div class="container">
             <img src="./Images/logo/Kunwar Fashion-Text.png" class="logo">
+
             <div class="profile-area">
                 <div class="theme-btn">
                     <span class="material-icons-sharp active">light_mode</span>
@@ -44,6 +45,7 @@
                 <span class="material-icons-sharp">cancel</span>
             </button>
             <div class="sidebar">
+                <!-- <div class="sidebar"> -->
                     <a href="./dashboard.html" >
                         <span class="material-icons-sharp">dashboard</span>
                         <h4>Dashboard</h4>
@@ -56,11 +58,11 @@
                         </a>
                         <ul class="dropdown-content">
                             <li><a href="./category-list.html" class="submenu-list"><ion-icon name="radio-button-on-sharp"></ion-icon><h4>Categories</h4></a></li>
-                            <li><a href="./product-list.html" class="submenu-list"><ion-icon name="radio-button-on-sharp"></ion-icon><h4>Products </h4></a></li>
-                            <li><a href="./brand-list.html" class="submenu-list"><ion-icon name="radio-button-on-sharp"></ion-icon><h4> Brands</h4></a></li>
+                            <li><a href="./product-list.html" class="submenu-list"><ion-icon name="radio-button-on-sharp"></ion-icon><h4>Products</h4></a></li>
+                            <li><a href="./brand-list.html" class="submenu-list"><ion-icon name="radio-button-on-sharp"></ion-icon><h4>Brands</h4></a></li>
                         </ul>
                 </div>
-                <a href="./order-list.html" class="active">
+                <a href="./order-list.html">
                     <span class="material-icons-sharp">shopping_cart_checkout</span>
                     <h4>Orders</h4>
                 </a>
@@ -76,68 +78,61 @@
                     <span class="material-icons-sharp">chat</span>
                     <h4>Messages</h4>
                 </a> -->
-                <a href="./admin-list.html">
+                <a href="#"  class="active">
                     <span class="material-icons-sharp">person</span>
                     <h4>Admins</h4>
                 </a>
             </div>
             <!-- SIDEBAR END-->
-
             <div class="updates">
-                <a href="#">LOG OUT</a>
+                <a href="">LOG OUT</a>
             </div>
+
         </aside>
 
+        
         <section>
             <div class="search-bar">
                 <span class="material-icons-sharp">search</span>  
                 <input type="search" id="searchInput" placeholder="Search" >
                 <div class="margine"></div>
             </div>
+            <div class="addbutton">
+                    <a href="./add-admin.html">
+                        <button type="submit">Add Admin</button>
+                    </a>
+            </div>
             <div class="board">
                 <table width="100%">
                     <thead>
                         <tr>
-                            <td>Order No.</td>
-                            <td>Date</td>
-                            <td>Customers</td>
-                            <td>SKU</td>
-                            <td>Products</td>
-                            <td>Status</td>
-                            <td>Payments</td>
+                            <td>Admins</td>
+                            <td>admin id</td>
+                            <td>email</td>
+                            <td>date created</td>
+                            <td>status</td>
                             <td>ACTIONS</td>
                         </tr>
                     </thead>
-                    <tbody id="orderTable" >
+                    <tbody id="productTable" >
                         <tr>
-                            <td class="product-sku">
-                                <h5>0001</h5>
-                            </td>
-                            <td class="product-category">
-                                <h5>01-01-2024 </h5>
-                            </td>
                             <td class="product-name">
                                 <img src="./qq/profile-1.jpg" alt="">
                                 <div class="product-description">
                                     <h5>Rahul Jung Kunwar</h5>
-                                    <p>Kunwarrahul9861@gmail.com</p>
                                 </div>
-                            </td>                            
+                            </td>
                             <td class="product-sku">
-                                <h5>02359215</h5>
+                                <h5>00518419</h5>
                             </td>
-                            <td class="product-quantity">
-                                <img src="./qq/t-shirt.jpg" alt="">
-                                <div class="product-description">
-                                    <h5>T-shirt</h5>
-                                    <p>This is a t-shirt</p>
-                                </div>
+                            <td class="product-category">
+                                <p>Kunwarrahul100@gmail.com</p>
                             </td>
-                            <td class="delivere">
-                                <p>Delivered</p>
+                            <td class="product-price">
+                                <h5>01-01-2024</h5>
                             </td>
-                            <td class="order-payment">
-                                <h5>Khalti</h5>
+                            <td class="active">
+                                <p>Active</p>
                             </td>
                             <td class="product-action">
                                 <a href="#">Action</a>
@@ -145,40 +140,29 @@
                         </tr>
 
                         <tr>
-                            <td class="product-sku">
-                                <h5>0002</h5>
-                            </td>
-                            <td class="product-category">
-                                <h5>01-01-2024 </h5>
-                            </td>
                             <td class="product-name">
                                 <img src="./qq/profile-1.jpg" alt="">
                                 <div class="product-description">
-                                    <h5>Rahul Jung Kunwar</h5>
-                                    <p>Kunwarrahul9861@gmail.com</p>
+                                    <h5>Aashra Pradhan</h5>
                                 </div>
-                            </td>                            
+                            </td>
                             <td class="product-sku">
-                                <h5>02359215</h5>
+                                <h5>00518419</h5>
                             </td>
-                            <td class="product-quantity">
-                                <img src="./qq/t-shirt.jpg" alt="">
-                                <div class="product-description">
-                                    <h5>T-shirt</h5>
-                                    <p>This is a t-shirt</p>
-                                </div>
+                            <td class="product-category">
+                                <p>Kunwarrahul100@gmail.com</p>
                             </td>
-                            <td class="dispached">
-                                <p>Out for Delivery</p>
+                            <td class="product-price">
+                                <h5>01-01-2024</h5>
                             </td>
-                            <td class="order-payment">
-                                <h5>Connect IPS</h5>
+                            <td class="inactive">
+                                <p>Inactive</p>
                             </td>
                             <td class="product-action">
                                 <a href="#">Action</a>
                             </td>
                         </tr>
-         
+                        
                     </tbody>
                 </table>
                 <div class="pagination">
@@ -208,7 +192,7 @@
     </main>
     <!-- ASIDE END-->
    
-    <script src="./JS/order-list.js"></script>
+    <script src="./JS/admin-list.js"></script>
       <!-- 
     - ionicon link
   -->

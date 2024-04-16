@@ -75,17 +75,21 @@
                     <span class="material-icons-sharp">shopping_cart_checkout</span>
                     <h4>Orders</h4>
                 </a>
-                <a href="#">
+                <a href="./customer-list.html">
                     <span class="material-icons-sharp">group</span>
                     <h4>Customers</h4>
                 </a>
-                <a href="#">
+                <a href="./transaction-list.html">
                     <span class="material-icons-sharp">receipt_long</span>
                     <h4>Transactions</h4>
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     <span class="material-icons-sharp">chat</span>
                     <h4>Messages</h4>
+                </a> -->
+                <a href="./admin-list.html">
+                    <span class="material-icons-sharp">person</span>
+                    <h4>Admins</h4>
                 </a>
             </div>
             <!-- SIDEBAR END-->
@@ -104,18 +108,6 @@
         <section class="add-product-section">
             <form id="addProductForm">
                 <h2>Add Product</h2>
-                <div class="form-group">
-                    <label for="productCategory">Category:</label>
-                    <select id="productCategory" name="productCategory" required>
-                        <option value="">Select Category</option>
-                        <option value="Cloth">Cloth</option>
-                        <option value="Shoes">Shoes</option>
-                        <option value="Watchs">Watch</option>
-                        <option value="Perfumes">Perfumes</option>
-                        <option value="Cosmetics">Cosmetics</option>
-                        <!-- Add more options as needed -->
-                    </select>
-                </div>
                 <div class="form-group">
                     <label for="productName">Product Name:</label>
                     <input type="text" id="productName" name="productName" required>
@@ -151,6 +143,130 @@
                         <label for="all">Unisex</label>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="productCategory">Category:</label>
+                    <select id="productCategory" name="productCategory" required>
+                        <option value="" disabled selected hidden>Select Category</option>
+                        <option value="Cloth">Cloth</option>
+                        <option value="Shoes">Shoes</option>
+                        <option value="Watchs">Watch</option>
+                        <option value="Perfumes">Perfumes</option>
+                        <option value="Cosmetics">Cosmetics</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="size-label">Size:</label>
+                    <div class="cusize-options">
+                        <input type="checkbox" id="small" name="productSizes" value="small">
+                        <label for="small">Small</label>
+
+                        <input type="checkbox" id="medium" name="productSizes" value="medium">
+                        <label for="medium">Medium</label>
+
+                        <input type="checkbox" id="large" name="productSizes" value="large">
+                        <label for="large">Large</label>
+                    </div>
+
+                    <div class="size-options">
+                        <input type="checkbox" id="XS" name="productSizes" value="XS">
+                        <label for="XS">XS</label>
+                
+                        <input type="checkbox" id="S" name="productSizes" value="S">
+                        <label for="S">S</label>
+                
+                        <input type="checkbox" id="M" name="productSizes" value="M">
+                        <label for="M">M</label>
+                
+                        <input type="checkbox" id="L" name="productSizes" value="L">
+                        <label for="L">L</label>
+                
+                        <input type="checkbox" id="XL" name="productSizes" value="XL">
+                        <label for="XL">XL</label>
+                
+                        <input type="checkbox" id="XXL" name="productSizes" value="XXL">
+                        <label for="XXL">XXL</label>
+                    </div>
+
+                    <div class="shoesize-options">
+                        <input type="checkbox" id="37" name="productSizes" value="37">
+                        <label for="37">37</label>
+                
+                        <input type="checkbox" id="38" name="productSizes" value="38">
+                        <label for="38">38</label>
+                
+                        <input type="checkbox" id="39" name="productSizes" value="39">
+                        <label for="39">39</label>
+                
+                        <input type="checkbox" id="40" name="productSizes" value="40">
+                        <label for="40">40</label>
+                
+                        <input type="checkbox" id="41" name="productSizes" value="41">
+                        <label for="41">41</label>
+                
+                        <input type="checkbox" id="42" name="productSizes" value="42">
+                        <label for="42">42</label>
+                        
+                        <input type="checkbox" id="43" name="productSizes" value="43">
+                        <label for="43">43</label>
+
+                        <input type="checkbox" id="44" name="productSizes" value="44">
+                        <label for="44">44</label>
+
+                        <input type="checkbox" id="45" name="productSizes" value="45">
+                        <label for="45">45</label>
+
+                        <input type="checkbox" id="46" name="productSizes" value="46">
+                        <label for="46">46</label>
+
+                        <input type="checkbox" id="47" name="productSizes" value="47">
+                        <label for="47">47</label>
+                    </div>
+                </div>
+                
+
+                    <div class="form-group">
+                        <label id="color-label">Color:</label>
+                        <div class="color-options">
+                            <input type="checkbox" id="red" name="productColors" value="red">
+                            <label for="red">Red</label>
+                            
+                            <input type="checkbox" id="green" name="productColors" value="green">
+                            <label for="green">Green</label>
+                            
+                            <input type="checkbox" id="blue" name="productColors" value="blue">
+                            <label for="blue">Blue</label>
+                            
+                            <input type="checkbox" id="yellow" name="productColors" value="yellow">
+                            <label for="yellow">Yellow</label>
+                            
+                            <input type="checkbox" id="orange" name="productColors" value="orange">
+                            <label for="orange">Orange</label>
+                            
+                            <input type="checkbox" id="purple" name="productColors" value="purple">
+                            <label for="purple">Purple</label>
+                            
+                            <input type="checkbox" id="pink" name="productColors" value="pink">
+                            <label for="pink">Pink</label>
+                            
+                            <input type="checkbox" id="brown" name="productColors" value="brown">
+                            <label for="brown">Brown</label>
+                            
+                            <input type="checkbox" id="gray" name="productColors" value="gray">
+                            <label for="gray">Gray</label>
+                            
+                            <input type="checkbox" id="black" name="productColors" value="black">
+                            <label for="black">Black</label>
+                            
+                            <input type="checkbox" id="white" name="productColors" value="white">
+                            <label for="white">White</label>
+                            
+                            <input type="checkbox" id="teal" name="productColors" value="teal">
+                            <label for="teal">Teal</label>
+                            
+                        </div>
+                    </div>
 
                 <!-- <div class="form-group">
                     <label for="productGender">Gender:</label>
@@ -170,7 +286,7 @@
                 <div class="form-group">
                     <label for="productSKU">SKU:</label>
                     <input type="text" id="productSKU" name="productSKU" required>
-                </div>
+                </div>  
                 <!-- <div id="optionsContainer">
                     <div class="option-container">
                         <input type="text" placeholder="Option" name="option[]">
@@ -185,7 +301,7 @@
 <!-- ========================================================================================================== -->
 
 
-<div class="container">
+<!-- <div class="container">
     <div class="card mt-5">
         <div class="card-header">Variants:</div>
         <div class="card-body" id="input-form">
@@ -215,7 +331,7 @@
             <button onclick="add_more()" class="btn">Add another option</button>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
@@ -230,6 +346,7 @@
             </form>
 
         </section>
+        
 
         <section class="add-product-section-right">
 
@@ -249,10 +366,26 @@
             </div>
             <div class="margine"></div>
 
+            <h3>PRODUCT MEDIA</h3>
+
+            <div class="secproimg">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <div class="field">
+                    <h3>Primary Image</h3>
+                    <div id="customLargePreview" class="large-preview"></div>
+                    <label for="customFile" class="upload-icon">
+                        <span class="material-icons-sharp">drive_folder_upload</span>
+                    </label>
+                    <h5>Upload Image</h5>
+                    <input type="file" id="customFile" name="customFile" class="upload-img" style="display: none;" accept="image/*" required />
+                </div>
+            </div>
+
+
             <div class="addproimg">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                 <div class="field">
-                    <h3>PRODUCT MEDIA</h3>
+                    <h3>Secondary Images</h3>
                     <div id="largePreview" class="large-preview"></div>
                     <label for="files" class="upload-icon">
                         <span class="material-icons-sharp">drive_folder_upload</span>
