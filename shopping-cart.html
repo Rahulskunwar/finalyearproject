@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/assets/css/cart.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <title>Shopping Cart</title>
+</head>
+<body>
+	<div class="container">
+		<a href="./productpage.html" class="back fa fa-arrow-left"></a>
+		<h1>Shopping Cart</h1>
+        
+        <!-- Sample Cart Items -->
+        <div class="cart-item" data-price="50">
+            <img src="/assets/images/banner-2.jpg" alt="Product 1">
+            <div class="cart-item-info">
+                <h3>Product 1</h3>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Category: Category 1</p>
+            </div>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <input type="text" value="1">
+                <button class="increment">+</button>
+            </div>
+            <p class="item-total">$50.00</p>
+            <button class="remove">Remove</button>
+        </div>
+        
+        <div class="cart-item" data-price="40">
+            <img src="/assets/images/newsletter.png" alt="Product 2">
+            <div class="cart-item-info">
+                <h3>Product 2</h3>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Category: Category 2</p>
+            </div>
+            <div class="quantity">
+                <button class="decrement">-</button>
+                <input type="text" value="1">
+                <button class="increment">+</button>
+            </div>
+            <p class="item-total">$40.00</p>
+            <button class="remove">Remove</button>
+        </div>
+        
+        <!-- Checkout Container -->
+        <div class="checkout-container">
+            <h2>Cart Summary</h2>
+            <p>Subtotal: <span id="subtotal">$0.00</span></p>
+            <p>Tax: <span id="tax">$0.00</span></p>
+            <h3>Total: <span id="total">$0.00</span></h3>
+            <button id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="/assets/js/cart.js"></script>
